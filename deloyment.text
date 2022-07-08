@@ -1,0 +1,34 @@
+- go to frontend then delete build
+then go to root package.json change heroku build to build only
+then run from root folder npm run build
+it will generate build in frontendthen go to backend 
+check your server.js change from older to this
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "/frontend/build")))
+    app.get("*", (req, res) => res.sendFile(path.join(__dirname, "frontend/build/index.html")))
+}
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`serve at http://localhost:${port}`);
+});
+go to your heroku dashboardthen create a new
+after creating go to settings
+then click on reveal config vars
+here u set ur environment 
+key will have ur mongodb and its url
+also ur cloudinary and it url
+
+then go to file explorer
+delete your .git folder
+then go to command prompt
+run git init 
+C:\Blog-App>git init
+C:\Blog-App>git status
+C:\Blog-App>git add .
+C:\Blog-App>git commit -m "deploying my blog app"
+//pushing to github and heroku 
+C:\Blog-App>git push https://github.com/Hussenat/FoodBlogApp12.git = github
+C:\Blog-App>heroku git:remote -a food-blog-app12
+C:\Blog-App>git push heroku master
+C:\Blog-App>heroku open

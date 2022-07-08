@@ -1,0 +1,17 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "build": "cd backend && npm install" 
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "14.15.0",
+    "npm": "8.5.5"
+  }
+}
+
