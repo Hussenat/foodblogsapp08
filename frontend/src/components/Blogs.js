@@ -5,7 +5,7 @@ import Blog from './Blog';
 function Blogs() {
   const [blogs, setBlogs] = useState();
   const sendRequest = async () => {
-    const res = await axios.get("http://localhost:5000/api/blog").catch(error => console.log(error));
+    const res = await axios.get("https://food-blogs-app08.herokuapp.com/api/blog").catch(error => console.log(error));
     const data = await res.data;
     return data;
   }

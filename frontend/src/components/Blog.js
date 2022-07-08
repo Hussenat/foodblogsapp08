@@ -13,7 +13,7 @@ const Blog = ({ title, description, imageCloud, userName, isUser, id }) => {
     navigate(`/myBlogs/${id}`)
   };
   const deleteRequest = async () => {
-    const res = await axios.delete(`http://localhost:5000/api/blog/${id}`).catch(error => console.log(error))
+    const res = await axios.delete(`https://food-blogs-app08.herokuapp.com/api/blog/${id}`).catch(error => console.log(error))
     const data =  await res.data;
     return data;
   }

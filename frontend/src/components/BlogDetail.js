@@ -17,7 +17,7 @@ const BlogDetail = () => {
     }));
   }
   const fetchDetails = async () => {
-    const res = await axios.get(`http://localhost:5000/api/blog/${id}`).catch(error => console.log(error))
+    const res = await axios.get(`https://food-blogs-app08.herokuapp.com/api/blog/${id}`).catch(error => console.log(error))
     const data = await res.data;
     return data;
   }
@@ -31,7 +31,7 @@ const BlogDetail = () => {
     });
   }, [id]);
   const sendRequest = async () => {
-    const res =  await axios.put(`http://localhost:5000/api/blog/update/${id}`, {
+    const res =  await axios.put(`https://food-blogs-app08.herokuapp.com/api/blog/update/${id}`, {
       title: inputs.title,
       description: inputs.description,
     }).catch(error => console.log(error))
